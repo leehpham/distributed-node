@@ -10,6 +10,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "fastify": "3.2"
+    "fastify": "3.2",
+    "fastify-gql": "5.3"
   }
 }

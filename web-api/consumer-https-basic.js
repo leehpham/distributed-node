@@ -10,7 +10,7 @@ const TARGET = process.env.TARGET || "localhost:4000";
 const options = {
   // 1: The client is now trusting the exact public key used by the server.
   agent: new https.Agent({
-    ca: fs.readFileSync(__dirname + "/../shared/tls/basic-certificate.cert"),
+    ca: fs.readFileSync(__dirname + "/../shared/tls/ca-certificate.cert"),
   }),
 };
 

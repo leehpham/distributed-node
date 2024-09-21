@@ -1,0 +1,18 @@
+# 1: Top-level query representation.
+type Query {
+  recipe(id: ID): Recipe
+  pid: Int
+}
+# 2: The Recipe type.
+type Recipe {
+  id: ID!
+  name: String!
+  steps: String
+  # 3: A Recipe has Ingredient children in an array called `ingredients`.
+  ingredients: [Ingredient]!
+}
+type Ingredient {
+  id: ID!
+  name: String!
+  quantity: String
+}

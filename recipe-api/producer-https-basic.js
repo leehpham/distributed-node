@@ -3,8 +3,10 @@ const fs = require("fs");
 const server = require("fastify")({
   // 1: The web server is now configured to enable HTTPS and read the certificate files.
   https: {
-    key: fs.readFileSync(__dirname + "/tls/basic-private-key.key"),
-    cert: fs.readFileSync(__dirname + "/../shared/tls/basic-certificate.cert"),
+    key: fs.readFileSync(__dirname + "/tls/producer-private-key.key"),
+    cert: fs.readFileSync(
+      __dirname + "/../shared/tls/producer-certificate.cert",
+    ),
   },
 });
 const HOST = process.env.HOST || "127.0.0.1";
