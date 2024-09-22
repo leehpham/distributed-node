@@ -1,0 +1,29 @@
+syntax = "proto3";
+package recipe;
+// 1: A definition for a service named RecipeService.
+service RecipeService {
+  rpc GetRecipe(RecipeRequest) returns (Recipe) {}
+  rpc GetMetaData(Empty) returns (Meta) {}
+}
+message Recipe {
+  // 3: A field name `id` that can be a 32-bit integer.
+  int32 id = 1;
+  string name = 2;
+  string steps = 3;
+  // 4: An array of `Recipe` messages in a field named `ingredients`,
+  // the 4th entry for this message.
+  repeated Ingredient ingredients = 4;
+}
+message Ingredient {
+  int32 id = 1;
+  string name = 2;
+  string quantity = 3;
+}
+message RecipeRequest {
+  int32 id = 1;
+}
+// 2: A message of type `Meta`.
+message Meta {
+  int32 pid = 2;
+}
+message Empty {}
